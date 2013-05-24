@@ -1,7 +1,7 @@
 <!-- Begin VideoJS -->
 <div class="video-js-box">
   <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
-  <video id="<%=@options[:id]%>" class="<%= @options[:classes] %>" width="<%=@options[:width]%>" height="<%=@options[:height]%>" controls="<%=@options[:controls]%>" preload="<%=@options[:preload]%>"</video>
+  <video id="<%=@options[:id]%>" class="<%=@options[:classes]%>" width="<%=@options[:width]%>" height="<%=@options[:height]%>" controls="<%=@options[:controls]%>" preload="<%=@options[:preload]%>"</video>
 
     <source src="<%=@options[:source]%>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 
@@ -17,8 +17,9 @@
   </video>
 
   <!-- Download links provided for devices that can't play video in the browser. -->
-  <%if @options[:show_dl_link]%>
-    <p class="vjs-no-video"><a href="<%=@options[:source]%>">download</a> </p>
+  <%unless @options[:show_dl_link].blank?%>
+    
+    <p class="vjs-no-video"><a href="<%=@options[:source]%>">Download Video</a> </p>
   <%end%>
 </div>
 <!-- End VideoJS -->
